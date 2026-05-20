@@ -1,0 +1,151 @@
+body{
+    background-color: rgb(148,140,140);
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* FORM */
+.weatherForm{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.cityInput{
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid rgba(0,0,0,0.3);
+
+    width: 300px;
+    max-width: 80vw;   /* important for mobile */
+}
+
+button[type="submit"]{
+    padding: 12px 18px;
+    font-size: 18px;
+
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+button:hover{
+    background: orange;
+    color: white;
+}
+
+/* CARD */
+.card{
+    background:
+    linear-gradient(
+    180deg,
+    rgb(1,176,234),
+    rgb(255,158,1)
+    );
+
+    padding: 40px;
+
+    border-radius: 15px;
+    box-shadow: 0 10px 10px black;
+
+    width: 350px;
+    max-width: 85vw;   /* MOBILE */
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* TEXT */
+
+.cityDisplay,
+.tempDisplay{
+    font-size:3rem;
+    font-weight:bold;
+    text-align:center;
+}
+
+.humidityDisplay{
+    color:black;
+    font-weight:bold;
+}
+
+.descDisplay{
+    font-size:28px;
+    font-style:italic;
+    color:black;
+    text-align:center;
+}
+
+.weatherEmoji{
+    font-size:70px;
+}
+
+.errorDisplay{
+    font-size:25px;
+    text-align:center;
+    color:black;
+}
+
+/* ===================== */
+/* MOBILE RESPONSIVE 🔥 */
+/* ===================== */
+
+@media(max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    .weatherForm{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .cityInput{
+        width:90%;
+        font-size:16px;
+    }
+
+    button{
+        width:90%;
+    }
+
+    .card{
+        width:90%;
+        padding:25px;
+    }
+
+    .cityDisplay,
+    .tempDisplay{
+        font-size:2.2rem;
+    }
+
+    .descDisplay{
+        font-size:22px;
+    }
+
+    .weatherEmoji{
+        font-size:55px;
+    }
+}
+
+/* remove blue tap on phone */
+
+button,
+input{
+    -webkit-tap-highlight-color: transparent;
+}
